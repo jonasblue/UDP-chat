@@ -21,10 +21,10 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((ipAddress, port))
 s.listen(1)
 conn, addr = s.accept()
-print '[INFO] listening on port: {}'.format(port)
+print('[INFO] listening on port: '+str(port))
 username = conn.recv(1024)[:-1]
 conn.send(myName+"\n")
 #while True:
 received = conn.recv(1024)[:-1]
-print '{}: {}'.format(username, received)
+print(str(username)+": "+str(received))
 conn.close()

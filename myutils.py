@@ -4,7 +4,7 @@ def sendMsg(soc, msg):
     username is the username of the user sending the msg
     msg is the msh to be send (w/out the \n at the end)
     '''
-    print 'You: {}'.format(msg)
+    print('You: '+str(msg))
     soc.send(msg+"\n")
 
 def askName():
@@ -12,5 +12,5 @@ def askName():
     asks for username to be used when establishing connection with other peer
     '''
     username = raw_input("Please enter your username: ")
-    print 'Welcome {}!'.format(username)
+    print("Welcome "+str(username)+"!")
     return username

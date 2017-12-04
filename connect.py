@@ -27,5 +27,5 @@ mu.sendMsg(s, "Hello how are you?")
 exit()
 while True:
     received = s.recv(1024)
-    print '{}: {}'.format(username, received)
+    print(str(username)+": "+str(received))
     s.send("Hello how are you\n")
