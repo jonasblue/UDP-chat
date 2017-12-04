@@ -1,7 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 
 import socket
 import sys
+import myutils as mu
 
 if len(sys.argv)!=3:
     print("Expected 2 args, got",len(sys.argv)-1)
@@ -19,4 +20,12 @@ try:
 except:
     print("[ERROR] Connection refused!")
     exit()
-
+myName = mu.askName()
+s.send(myName+"\n")
+username = s.recv(1024)[:-1]
+mu.sendMsg(s, "Hello how are you?")
+exit()
+while True:
+    received = s.recv(1024)
+    print '{}: {}'.format(username, received)
+    s.send("Hello how are you\n")
