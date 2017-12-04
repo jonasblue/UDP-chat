@@ -8,7 +8,7 @@ if len(sys.argv)!=2:
     print("Expected one argument, got", len(sys.argv)-1)
     exit()
 
-ipAddress = "127.0.0.1"
+ipAddress = ""#"127.0.0.1"
 try:
     port = int(sys.argv[1])
 except:
